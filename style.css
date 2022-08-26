@@ -11,10 +11,11 @@
 }
 .container{
     background-image: url(./assets/bg.jpg);
-    width: 100%;
-    height: 100vh;
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
 }
 .nav-bar{
     display:flex;
@@ -45,7 +46,9 @@
     font-weight:600;
     text-decoration:none;
 }
-
+.ham-icon{
+    display:none;
+}
 .line{
     position: relative;
     width: 70%;
@@ -155,3 +158,39 @@
     background: var(--white-color);
 }
 
+@media screen and (max-width:600px){
+    .list-items,.call-detail{
+        display:none;
+    }
+    .container{
+        background-position: initial;
+    }
+    .ham-icon{
+        display:flex;
+        height:40px;
+    }
+    .line{
+        display:none;
+    }
+    .main-section{
+        display:flex;
+        flex-direction: column;
+    }
+    
+    .main-left h1{
+        font-size: 2rem;
+    }
+    .main-left button{
+        font-size: 1rem;
+        padding:1rem;
+        width: 40%;  
+    }
+    .card:nth-child(1){
+        top: 120px;
+        right: 10px;     
+    }
+    .card:nth-child(2){
+        right: 200px;
+        bottom:50px
+    }
+}
